@@ -161,7 +161,6 @@
 		B94A14C719E4E2C300CB3A73 /* Ratings */ = {
 			isa = PBXGroup;
 			children = (
-				B94A153919E6242600CB3A73 /* iPadScreens */,
 				B94A152219E4EF5B00CB3A73 /* Player.h */,
 				B94A152319E4EF5B00CB3A73 /* Player.m */,
 				B94A151F19E4EE5B00CB3A73 /* PlayersViewController.h */,
@@ -184,6 +183,7 @@
 				B94A153719E621C300CB3A73 /* Main-iPad.storyboard */,
 				B94A153419E61E0600CB3A73 /* SuperCoolSegue.h */,
 				B94A153519E61E0600CB3A73 /* SuperCoolSegue.m */,
+				B94A153919E6242600CB3A73 /* iPadScreens */,
 				B94A14EE19E4EA2000CB3A73 /* Images */,
 				B94A14D519E4E2C300CB3A73 /* Images.xcassets */,
 				B94A14D719E4E2C300CB3A73 /* LaunchScreen.xib */,
@@ -590,6 +590,7 @@
 				B94A14EA19E4E2C400CB3A73 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B94A14EB19E4E2C400CB3A73 /* Build configuration list for PBXNativeTarget "RatingsTests" */ = {
 			isa = XCConfigurationList;
@@ -598,6 +599,7 @@
 				B94A14ED19E4E2C400CB3A73 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

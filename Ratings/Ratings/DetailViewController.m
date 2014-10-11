@@ -11,6 +11,7 @@
 @implementation DetailViewController
 {
     UIPopoverController *_masterPopoverController;
+    UIPopoverController *_menuPopoverController;
 }
 
 // Needed for iOS 5 only
@@ -45,6 +46,30 @@
     [items removeObject:barButtonItem];
     [self.toolbar setItems:items animated:YES];
     _masterPopoverController = nil;
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if([segue.identifier isEqualToString:@"ShowPopover"]){
+        if (_menuPopoverController != nil &&
+            _menuPopoverController.popoverVisible) {
+            [_menuPopoverController dismissPopoverAnimated:NO];
+        }
+        _menuPopoverController = ((UIStoryboardPopoverSegue *) segue).popoverController;
+        _menuPopoverController.delegate = self;
+    }
+}
+
+-(void)popoverControllerDidDismissPopover:(UIPopoverController *)popoverController{
+    _menuPopoverController.delegate = nil;
+    _menuPopoverController = nil;
+}
+
+-(void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration{
+    [super willAnimateRotationToInterfaceOrientation:toInterfaceOrientation duration:duration];
+    if(_menuPopoverController != nil && _menuPopoverController.popoverVisible){
+        [_menuPopoverController dismissPopoverAnimated:YES];
+        _menuPopoverController = nil;
+    }
 }
 
 @end
